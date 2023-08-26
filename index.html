@@ -21,31 +21,40 @@
   </form>
 
   <script>
-    function submitForm() {
-      const name = document.getElementById("name").value;
-      const todayDate = document.getElementById("todayDate").value;
-      const startDate = document.getElementById("startDate").value;
-      const endDate = document.getElementById("endDate").value;
+    document.getElementById("dataForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-      const formData = {
-        name: name,
-        todayDate: todayDate,
-        startDate: startDate,
-        endDate: endDate
-      };
+  const name = document.getElementById("name").value;
+  const todayDate = document.getElementById("todayDate").value;
+  const startDate = document.getElementById("startDate").value;
+  const endDate = document.getElementById("endDate").value;
 
-      fetch('https://script.google.com/macros/s/AKfycbyu3TKVeDA2VLarBvS89MfcwOCGLEUWssVOWYrvg4s5lVFgSWeafOdONdooIBd7KO0YxQ/exec', {
-        method: 'POST',
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.text())
-      .then(message => {
-        alert(message);
-      })
-      .catch(error => {
-        alert("An error occurred: " + error);
-      });
-    }
+  const formData = {
+    name: name,
+    todayDate: todayDate,
+    startDate: startDate,
+    endDate: endDate
+  };
+
+  const url = 'https://script.google.com/macros/s/AKfycbxtO2SwMzn_xv4MKFaRZq5BXTabs-mWYryBnl5me_cXoCEYNOo_WBrdzmUO6jDv2X3U5Q/exec';
+
+  fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.text())
+  .then(message => {
+    alert(message);
+  })
+  .catch(error => {
+    alert("An error occurred: " + error);
+  });
+});
+
   </script>
 </body>
 </html>
