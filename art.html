@@ -117,9 +117,19 @@
     transform: scaleX(1);
   }
 
-  #hero {
-     line-height: 1; 
-  }
+    #hero p, #hero h1 {
+            margin: 0; /* Remove margin */
+            padding: 0; /* Remove padding */
+        }
+        
+        #hero h1:first-child {
+            margin-bottom: 10px; /* Adjust margin-bottom for the first h1 element */
+        }
+        
+        #hero h1:last-child {
+            margin-top: 10px; /* Adjust margin-top for the second h1 element */
+        }
+  
 </style>
 <title>hada Responsive Moving Lines</title>
 </head>
