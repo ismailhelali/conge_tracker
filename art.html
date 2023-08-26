@@ -33,6 +33,8 @@
     cursor: pointer;
     transform-origin: center bottom;
     transition: transform 0.3s, background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
   }
 
   .block:hover {
@@ -43,8 +45,8 @@
     background-color: #e74c3c;
   }
 
-  .block:nth-child(1) ~ .block {
-    animation: fadeIn 0.5s ease-in-out forwards;
+  .block:nth-child(1) ~ .block:nth-child(2) ~ .block {
+    animation-delay: 0.5s;
   }
 
   .connector {
@@ -59,18 +61,28 @@
     height: 60px;
     top: -30px;
     left: 29px;
+    animation: connectorStretch 0.5s ease-in-out forwards 0.5s;
+    transform-origin: bottom center;
   }
 
   .block:nth-child(1) ~ .block:nth-child(2) ~ .connector {
     height: 60px;
     top: 30px;
     left: 29px;
+    animation: connectorStretch 0.5s ease-in-out forwards 1s;
+    transform-origin: bottom center;
   }
 
   @keyframes fadeIn {
     to {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  @keyframes connectorStretch {
+    to {
+      transform: scaleY(1);
     }
   }
 </style>
