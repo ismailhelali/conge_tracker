@@ -11,114 +11,30 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Arial', sans-serif;
     overflow: hidden;
   }
 
-  .blockchain-tree {
-    position: relative;
-  }
-
-  .block {
-    width: 80px;
-    height: 80px;
-    background-color: #3498db;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
+  .moving-line {
     position: absolute;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transform-origin: center bottom;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.52, 1.975), background-color 0.3s;
-    animation: fadeIn 0.5s ease-in-out forwards, bounce 2s ease-in-out infinite alternate;
-    opacity: 0;
-  }
-
-  .block:hover {
-    background-color: #2980b9;
-  }
-
-  .block:nth-child(odd) {
-    background-color: #e74c3c;
-  }
-
-  .block:nth-child(1) ~ .block:nth-child(2) ~ .block {
-    animation-delay: 0.8s;
-  }
-
-  .connector {
-    width: 2px;
-    background-color: #95a5a6;
-    position: absolute;
-    transform: translateX(40px);
-    z-index: -1;
-  }
-
-  .block:nth-child(1) ~ .connector {
-    height: 80px;
-    top: -40px;
-    left: 39px;
-    animation: connectorStretch 0.5s ease-in-out forwards 0.5s;
-    transform-origin: bottom center;
-  }
-
-  .block:nth-child(1) ~ .block:nth-child(2) ~ .connector {
-    height: 80px;
-    top: 40px;
-    left: 39px;
-    animation: connectorStretch 0.5s ease-in-out forwards 1s;
-    transform-origin: bottom center;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes bounce {
-    to {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes connectorStretch {
-    to {
-      transform: scaleY(1);
-    }
-  }
-
-  .moving-lines-horizontal {
-    position: absolute;
-    width: 100vw;
-    height: 2px;
     background-color: white;
-    animation: moveLinesHorizontal 5s linear infinite;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
-  .moving-lines-vertical {
-    position: absolute;
+  .moving-line-vertical {
     height: 100vh;
     width: 2px;
-    background-color: white;
-    animation: moveLinesVertical 10s linear infinite;
+    animation-name: moveLineVertical;
   }
 
-  @keyframes moveLinesHorizontal {
-    from {
-      transform: translateX(100vw);
-    }
-    to {
-      transform: translateX(0);
-    }
+  .moving-line-horizontal {
+    width: 100vw;
+    height: 2px;
+    animation-name: moveLineHorizontal;
   }
 
-  @keyframes moveLinesVertical {
+  @keyframes moveLineVertical {
     from {
       transform: translateY(0);
     }
@@ -126,27 +42,23 @@
       transform: translateY(100vh);
     }
   }
+
+  @keyframes moveLineHorizontal {
+    from {
+      transform: translateX(100vw);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 </style>
-<title>Blockchain Tree of Natural Elements</title>
+<title>Moving Lines</title>
 </head>
 <body>
-  <div class="blockchain-tree">
-    <div class="block">M</div>
-    <div class="block">S</div>
-    <div class="block">I</div>
-    <div class="connector"></div>
-    <div class="connector"></div>
-  </div>
-  <div class="moving-lines-horizontal"></div>
-  <div class="moving-lines-vertical" style="left: 100px;"></div>
-  <div class="moving-lines-vertical" style="left: 210px;"></div>
-  <div class="moving-lines-vertical" style="left: 360px;"></div>
-  <div class="moving-lines-vertical" style="left: 416px;"></div>
-  <div class="moving-lines-vertical" style="left: 570px;"></div>
-
-    <div class="moving-line-vertical"></div>
-    div class="moving-line-vertical" style="top : 100px;"></div>
-
-
+  <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 3s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 4s;"></div>
 </body>
 </html>
