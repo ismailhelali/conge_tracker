@@ -6,22 +6,13 @@
 <style>
   body {
     background-color: #222;
-    margin: 0; 
+    margin: 0;
     overflow: hidden;
-  }
-
-  .moving-lines-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
   }
 
   .moving-line {
     position: absolute;
-    background-color: white; /* Set the line color here */
+    background-color: white;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
@@ -35,11 +26,6 @@
   .moving-line-horizontal {
     height: 2px;
     animation-name: moveLineHorizontal;
-  }
-
-  .moving-line + .moving-line,
-  .moving-line + .moving-line-vertical {
-    margin-top: 20px; /* Adjust the distance as needed */
   }
 
   /* Adjust animation delays using nth-child */
@@ -78,15 +64,13 @@
 <title>Moving Lines</title>
 </head>
 <body>
-  <div class="moving-lines-container">
-    <!-- Horizontal Lines -->
-    <div class="moving-line moving-line-horizontal"></div>
-    <div class="moving-line moving-line-horizontal"></div>
-    <div class="moving-line moving-line-horizontal"></div>
-    <!-- Vertical Lines -->
-    <div class="moving-line moving-line-vertical"></div>
-    <div class="moving-line moving-line-vertical"></div>
-    <div class="moving-line moving-line-vertical"></div>
-  </div>
+  <!-- Horizontal Lines -->
+  <div class="moving-line moving-line-horizontal" style="top: 10%;"></div>
+  <div class="moving-line moving-line-horizontal" style="top: 40%;"></div>
+  <div class="moving-line moving-line-horizontal" style="top: 70%;"></div>
+  <!-- Vertical Lines -->
+  <div class="moving-line moving-line-vertical" style="left: 20%;"></div>
+  <div class="moving-line moving-line-vertical" style="left: 50%;"></div>
+  <div class="moving-line moving-line-vertical" style="left: 80%;"></div>
 </body>
 </html>
