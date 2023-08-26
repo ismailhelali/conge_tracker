@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://script.google.com/macros/s/AKfycbxluwFC4Iq-7iVCuqSAp7seiTnJByGgdH0HvMv9VAK73Fc1KvNbXJmvygXCv3v4YJmYNw/exec"></script>
-
-  <base target="_top">
+  <title>Form</title>
 </head>
 <body>
   <form id="dataForm">
@@ -29,18 +27,24 @@
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
 
-      google.script.run
-        .withSuccessHandler(displaySuccessMessage)
-        .withFailureHandler(displayErrorMessage)
-        .submitFormData(name, todayDate, startDate, endDate);
-    }
+      const formData = {
+        name: name,
+        todayDate: todayDate,
+        startDate: startDate,
+        endDate: endDate
+      };
 
-    function displaySuccessMessage(response) {
-      alert(response);
-    }
-
-    function displayErrorMessage(error) {
-      alert("An error occurred: " + error);
+      fetch('https://script.google.com/macros/s/AKfycbyZN9Vx_jKIrKaleIZfYYVavdIZgRua1h7m6FVvmXDEWUuMOKDh5IkZ6Nztz4cvil-NFg/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.text())
+      .then(message => {
+        alert(message);
+      })
+      .catch(error => {
+        alert("An error occurred: " + error);
+      });
     }
   </script>
 </body>
