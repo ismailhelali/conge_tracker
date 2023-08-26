@@ -26,6 +26,7 @@
     height: 150vh;
     width: 2px;
     animation-name: moveLineVertical;
+    margin-right: 10px; /* Add margin between vertical lines */
   }
 
   .moving-line-horizontal {
@@ -37,7 +38,7 @@
   /* Add margin for both vertical and horizontal lines */
   .moving-line + .moving-line,
   .moving-line + .moving-line-vertical {
-    margin-top: 100px; /* Adjust the distance as needed */
+    margin-top: 10px; /* Adjust the distance as needed */
   }
 
   @keyframes moveLineVertical {
