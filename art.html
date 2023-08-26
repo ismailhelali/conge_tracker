@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-  }
-
-  .tree-container {
+    background-color: #222;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Arial', sans-serif;
   }
 
   .blockchain-tree {
@@ -21,8 +19,8 @@
   }
 
   .block {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: #3498db;
     border-radius: 50%;
     display: flex;
@@ -31,66 +29,60 @@
     color: white;
     font-weight: bold;
     position: absolute;
-    transition: transform 0.3s;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform-origin: center bottom;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  .block:hover {
+    background-color: #2980b9;
   }
 
   .block:nth-child(odd) {
     background-color: #e74c3c;
   }
 
-  .blockchain-tree .block:nth-child(2) {
-    top: 120px;
-    left: 50px;
+  .block:nth-child(1) ~ .block {
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
-
-  .blockchain-tree .block:nth-child(3) {
-    top: 240px;
-    left: -80px;
-  }
-
-  /* Add more block styling for additional layers */
 
   .connector {
     width: 2px;
     background-color: #95a5a6;
     position: absolute;
-    transform: translateX(40px);
+    transform: translateX(30px);
     z-index: -1;
   }
 
   .block:nth-child(1) ~ .connector {
-    height: 80px;
-    top: -82px;
-    left: 39px;
+    height: 60px;
+    top: -30px;
+    left: 29px;
   }
 
-  .block:nth-child(2) ~ .connector {
-    height: 80px;
-    top: 38px;
-    left: 39px;
+  .block:nth-child(1) ~ .block:nth-child(2) ~ .connector {
+    height: 60px;
+    top: 30px;
+    left: 29px;
   }
 
-  .block:nth-child(3) ~ .connector {
-    height: 80px;
-    top: 158px;
-    left: 39px;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
-
-  /* Add more connector styling for additional layers */
-
-  /* Additional styling for text or labels if needed */
 </style>
 <title>Blockchain Tree of Natural Elements</title>
 </head>
 <body>
-  <div class="tree-container">
-    <div class="blockchain-tree">
-      <div class="block">1</div>
-      <div class="block">2</div>
-      <div class="block">3</div>
-      <div class="connector"></div>
-      <div class="connector"></div>
-    </div>
+  <div class="blockchain-tree">
+    <div class="block">1</div>
+    <div class="block">2</div>
+    <div class="block">3</div>
+    <div class="connector"></div>
+    <div class="connector"></div>
   </div>
 </body>
 </html>
