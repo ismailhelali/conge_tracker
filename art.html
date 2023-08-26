@@ -12,6 +12,7 @@
     align-items: center;
     height: 100vh;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
   }
 
   .blockchain-tree {
@@ -33,7 +34,7 @@
     cursor: pointer;
     transform-origin: center bottom;
     transition: transform 0.3s, background-color 0.3s;
-    animation: fadeIn 0.5s ease-in-out forwards;
+    animation: fadeIn 0.5s ease-in-out forwards, bounce 2s ease-in-out infinite alternate;
     opacity: 0;
   }
 
@@ -80,9 +81,31 @@
     }
   }
 
+  @keyframes bounce {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+
   @keyframes connectorStretch {
     to {
       transform: scaleY(1);
+    }
+  }
+
+  .moving-lines {
+    position: absolute;
+    width: 2px;
+    background-color: white;
+    animation: moveLines 4s linear infinite alternate;
+  }
+
+  @keyframes moveLines {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
     }
   }
 </style>
@@ -96,5 +119,15 @@
     <div class="connector"></div>
     <div class="connector"></div>
   </div>
+  <div class="moving-lines" style="left: 50px;"></div>
+  <div class="moving-lines" style="left: 100px;"></div>
+  <div class="moving-lines" style="left: 150px;"></div>
+  <div class="moving-lines" style="left: 200px;"></div>
+  <div class="moving-lines" style="left: 250px;"></div>
+  <div class="moving-lines" style="left: 300px;"></div>
+  <div class="moving-lines" style="left: 350px;"></div>
+  <div class="moving-lines" style="left: 400px;"></div>
+  <div class="moving-lines" style="left: 450px;"></div>
+  <div class="moving-lines" style="left: 500px;"></div>
 </body>
 </html>
