@@ -23,7 +23,7 @@
   }
 
   .moving-line-vertical {
-    height: 100vh;
+    height: 150vh; /* Increased height for better visibility */
     width: 2px;
     animation-name: moveLineVertical;
   }
@@ -39,7 +39,7 @@
       transform: translateY(0);
     }
     to {
-      transform: translateY(100vh);
+      transform: translateY(150vh); /* Adjusted distance */
     }
   }
 
@@ -56,14 +56,10 @@
 </head>
 <body>
   <div class="moving-line moving-line-horizontal" style="animation-delay: 0s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 1s;"></div>
   <div class="moving-line moving-line-horizontal" style="animation-delay: 2s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 3s;"></div>
   <div class="moving-line moving-line-horizontal" style="animation-delay: 4s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
   <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
   <div class="moving-line moving-line-vertical" style="animation-delay: 3s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 4s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 5s;"></div>
 </body>
 </html>
