@@ -44,6 +44,26 @@
     margin-top: 20px; /* Adjust the distance as needed */
   }
 
+  /* Adjust animation delays */
+  .moving-line-horizontal:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .moving-line-horizontal:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .moving-line-horizontal:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .moving-line-vertical:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .moving-line-vertical:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .moving-line-vertical:nth-child(3) {
+    animation-delay: 2s;
+  }
+
   @keyframes moveLineVertical {
     from {
       transform: translateY(-20px);
@@ -51,7 +71,7 @@
     to {
       transform: translateY(calc(100vh + 20px));
     }
-  } 
+  }
 
   @keyframes moveLineHorizontal {
     from {
@@ -67,13 +87,13 @@
 <body>
   <div class="moving-lines-container">
     <!-- Horizontal Lines -->
-    <div class="moving-line moving-line-horizontal" style="animation-delay: 0s; width: 80%;"></div>
-    <div class="moving-line moving-line-horizontal" style="animation-delay: 1s; width: 70%;"></div>
-    <div class="moving-line moving-line-horizontal" style="animation-delay: 2s; width: 60%;"></div>
+    <div class="moving-line moving-line-horizontal"></div>
+    <div class="moving-line moving-line-horizontal"></div>
+    <div class="moving-line moving-line-horizontal"></div>
     <!-- Vertical Lines -->
-    <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
-    <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
-    <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
+    <div class="moving-line moving-line-vertical"></div>
+    <div class="moving-line moving-line-vertical"></div>
+    <div class="moving-line moving-line-vertical"></div>
   </div>
 </body>
 </html>
