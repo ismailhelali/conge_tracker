@@ -4,59 +4,15 @@
   <title>Form</title>
 </head>
 <body>
-  <form id="dataForm">
-    <label for="name">Nom et Prénom:</label>
-    <input type="text" id="name" name="name" required><br>
+  <form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec"
+>
+  <input name="Email" type="email" placeholder="Email" required>
+  <input name="Name" type="text" placeholder="Name" required>
+  <button type="submit">Send</button>
+</form>
+  
 
-    <label for="todayDate">Date d'aujourd'hui:</label>
-    <input type="date" id="todayDate" name="todayDate" required><br>
-
-    <label for="startDate">Date de début:</label>
-    <input type="date" id="startDate" name="startDate" required><br>
-
-    <label for="endDate">Date de fin:</label>
-    <input type="date" id="endDate" name="endDate" required><br>
-
-    <button type="submit">Soumettre</button>
-  </form>
-
-  <script>
-    document.getElementById("dataForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      submitForm();
-    });
-
-    function submitForm() {
-      const name = document.getElementById("name").value;
-      const todayDate = document.getElementById("todayDate").value;
-      const startDate = document.getElementById("startDate").value;
-      const endDate = document.getElementById("endDate").value;
-
-      const formData = {
-        name: name,
-        todayDate: todayDate,
-        startDate: startDate,
-        endDate: endDate
-      };
-
-      const url = 'https://script.google.com/macros/s/AKfycbyklh01rFQQaTMOStfcjogCHO4KRU-IXt8raadinQhgzokKTrOq6d-PJtymH80aWI6EGw/exec'; // Replace with your actual Google Apps Script URL
-
-      fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.text())
-      .then(message => {
-        alert(message);
-      })
-      .catch(error => {
-        alert("An error occurred: " + error);
-      });
-    }
-  </script>
 </body>
 </html>
