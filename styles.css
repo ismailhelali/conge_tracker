@@ -3,20 +3,27 @@ body {
   padding: 0;
   background-color: white;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  text-align: center;
 }
 
 .text {
   font-size: 20px;
   margin-bottom: 20px;
   color: black;
+}
+
+.button-link {
+  text-decoration: none;
 }
 
 .button {
