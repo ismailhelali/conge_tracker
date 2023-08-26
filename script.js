@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function saveDataToGoogleSheets(data) {
-  const url = 'https://script.google.com/macros/s/AKfycbwVeCJhqDb34B5tOyr2N1edQT-ovmNZs7Mwuti1F2zF80nYRQZLANhV5cJT2amuAMpMuA/exec'; // Replace with your Google Script URL
+  const url = 'https://script.google.com/macros/s/AKfycbyE5r-jRGY6N5iVQWQ-SgrMXMN3lGzvMynUDiQs25r4xuEolCT-eKbfiYCFOT-4UxDegQ/exec'; // Replace with your Google Script URL
   const options = {
     method: 'POST',
     headers: {
