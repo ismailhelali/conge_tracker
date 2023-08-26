@@ -34,9 +34,10 @@
     animation-name: moveLineHorizontal;
   }
 
-  /* Add margin to create distance between lines */
-  .moving-line + .moving-line {
-    margin-top: 10px; /* Adjust the distance as needed */
+  /* Add margin for both vertical and horizontal lines */
+  .moving-line + .moving-line,
+  .moving-line + .moving-line-vertical {
+    margin-top: 100px; /* Adjust the distance as needed */
   }
 
   @keyframes moveLineVertical {
