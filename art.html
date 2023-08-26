@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
-    background-color: #222;
+    background-color: black;
     margin: 0;
     overflow: hidden;
   }
@@ -26,6 +26,11 @@
   .moving-line-horizontal {
     height: 2px;
     animation-name: moveLineHorizontal;
+  }
+
+  .moving-line + .moving-line,
+  .moving-line + .moving-line-vertical {
+    margin-top: 20px; /* Adjust the distance as needed */
   }
 
   /* Adjust animation delays using nth-child */
@@ -61,14 +66,14 @@
     }
   }
 </style>
-<title>Moving Lines</title>
+<title>Responsive Moving Lines</title>
 </head>
 <body>
+  <!-- Moving Lines -->
+  <div class="moving-line moving-line-horizontal" style="top: 20%;"></div>
+  <div class="moving-line moving-line-horizontal" style="top: 50%;"></div>
+  <div class="moving-line moving-line-horizontal" style="top: 80%;"></div>
   <!-- Horizontal Lines -->
-  <div class="moving-line moving-line-horizontal" style="top: 10%;"></div>
-  <div class="moving-line moving-line-horizontal" style="top: 40%;"></div>
-  <div class="moving-line moving-line-horizontal" style="top: 70%;"></div>
-  <!-- Vertical Lines -->
   <div class="moving-line moving-line-vertical" style="left: 20%;"></div>
   <div class="moving-line moving-line-vertical" style="left: 50%;"></div>
   <div class="moving-line moving-line-vertical" style="left: 80%;"></div>
