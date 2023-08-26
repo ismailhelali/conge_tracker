@@ -55,23 +55,15 @@
 <title>Moving Lines</title>
 </head>
 <body>
-  <script>
-    function fibonacci(n) {
-      if (n <= 0) return 0;
-      if (n === 1) return 1;
-      return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-
-    const numLines = 10; // Change this to the number of lines you want
-    const linesContainer = document.body;
-
-    for (let i = 0; i < numLines; i++) {
-      const isVertical = i % 2 === 0;
-      const line = document.createElement('div');
-      line.className = `moving-line ${isVertical ? 'moving-line-vertical' : 'moving-line-horizontal'}`;
-      line.style.animationDelay = `${fibonacci(i)}s`;
-      linesContainer.appendChild(line);
-    }
-  </script>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 0s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 1s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 2s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 3s;"></div>
+  <div class="moving-line moving-line-horizontal" style="animation-delay: 4s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 3s;"></div>
+  <div class="moving-line moving-line-vertical" style="animation-delay: 4s;"></div>
 </body>
 </html>
