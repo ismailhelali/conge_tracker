@@ -16,21 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function saveDataToGoogleSheets(data) {
-  const url = 'https://script.google.com/macros/s/AKfycbyE5r-jRGY6N5iVQWQ-SgrMXMN3lGzvMynUDiQs25r4xuEolCT-eKbfiYCFOT-4UxDegQ/exec'; // Replace with your Google Script URL
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  };
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyxfbHb-v57wqbqWi1sB08lbxtbWP2NdZ9pdSHC325HTuNIiImBIYd4WoAhix7ycebtqw/exec';
+  const jsonpCallbackName = 'handleResponse';
 
-  fetch(url, options)
-    .then(response => response.json())
-    .then(result => {
-      console.log('Data saved to Google Sheets:', result);
-    })
-    .catch(error => {
-      console.error('Error saving data:', error);
-    });
+  const url = `${scriptURL}?callback=${jsonpCallbackName}&data=${encodeURIComponent(JSON.stringify(data))}`;
+  const scriptElement = document.createElement('script');
+  scriptElement.src = url;
+  document.body.appendChild(scriptElement);
+}
+
+function handleResponse(response) {
+  if (response.success) {
+    console.log('Data saved to Google Sheets:', response);
+  } else {
+    console.error('Error saving data:', response.error);
+  }
 }
