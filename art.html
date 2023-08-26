@@ -14,23 +14,26 @@
     overflow: hidden;
   }
 
+  .moving-lines-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
   .moving-line {
     position: absolute;
     background-color: white;
-    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
   .moving-line-vertical {
-    height: 150vh;
     width: 2px;
     animation-name: moveLineVertical;
-    margin-left: 100px; /* Add margin between vertical lines */
+    margin-left: 100px; /* Adjust the distance as needed */
   }
 
   .moving-line-horizontal {
-    width: 100vw;
     height: 2px;
     animation-name: moveLineHorizontal;
   }
@@ -38,39 +41,39 @@
   /* Add margin for both vertical and horizontal lines */
   .moving-line + .moving-line,
   .moving-line + .moving-line-vertical {
-    margin-top: 100px; /* Adjust the distance as needed */
+    margin-top: 20px; /* Adjust the distance as needed */
   }
 
   @keyframes moveLineVertical {
     from {
-      transform: translateY(0);
+      transform: translateY(-20px);
     }
     to {
-      transform: translateY(150vh);
+      transform: translateY(calc(100vh + 20px));
     }
   }
 
   @keyframes moveLineHorizontal {
     from {
-      transform: translateX(100vw);
+      transform: translateX(calc(100vw + 20px));
     }
     to {
-      transform: translateX(0);
+      transform: translateX(-20px);
     }
   }
 </style>
 <title>Moving Lines</title>
 </head>
 <body>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 0s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 1s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 2s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 3s;"></div>
-  <div class="moving-line moving-line-horizontal" style="animation-delay: 4s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 3s;"></div>
-  <div class="moving-line moving-line-vertical" style="animation-delay: 4s;"></div>
+  <div class="moving-lines-container">
+    <!-- Horizontal Lines -->
+    <div class="moving-line moving-line-horizontal" style="animation-delay: 0s; width: 80%;"></div>
+    <div class="moving-line moving-line-horizontal" style="animation-delay: 1s; width: 70%;"></div>
+    <div class="moving-line moving-line-horizontal" style="animation-delay: 2s; width: 60%;"></div>
+    <!-- Vertical Lines -->
+    <div class="moving-line moving-line-vertical" style="animation-delay: 0s;"></div>
+    <div class="moving-line moving-line-vertical" style="animation-delay: 1s;"></div>
+    <div class="moving-line moving-line-vertical" style="animation-delay: 2s;"></div>
+  </div>
 </body>
 </html>
