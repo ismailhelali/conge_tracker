@@ -7,41 +7,35 @@
     background: linear-gradient(to bottom, #fcba03, #f2e7c7);
 }
 
-/*home icon */
+/*Menu */
 
-.home-icon {
-    width: 100px;
-    height: 100px;
-    position: relative;
+
+.menu {
+    background-color: #333;
+    padding: 10px 0;
 }
 
-.roof {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 50px solid #FF8D03;
-    position: absolute;
-    top: 0;
-    left: 0;
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.building {
-    width: 100px;
-    height: 70px;
-    background-color: #FF8D03;
-    position: absolute;
-    top: 50px;
-    left: 0;
+.menu li {
+    margin: 0 20px;
 }
 
-.door {
-    width: 30px;
-    height: 60px;
-    background-color: #795548;
-    position: absolute;
-    top: 60px;
-    left: 35px;
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #FF8D03;
 }
 
   
@@ -117,14 +111,14 @@
 </head>
 <body>
 
- <a href="/conge_tracker/" class="home-link">
-        <div class="home-icon">
-            <div class="roof"></div>
-            <div class="building"></div>
-            <div class="door"></div>
-        
-        </div>
- </a>
+ <nav class="menu">
+        <ul>
+            <li><a href="/">#Accueil</a></li>
+            <li><a href="/">#Contact</a></li>
+            <li><a href="/">#News</a></li>
+            <li><a href="/">#PodCast</a></li>
+        </ul>
+    </nav>
   
 <div class="valueform">
 <p>Un simple clic pour révéler l'excellence.</p>
