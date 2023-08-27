@@ -26,8 +26,8 @@ border: 1px solid rgba(222, 92, 92, 0.99);
 
     }
 .input {
-            margin: 5px; 
-            padding: 5px;
+            margin: 10px; 
+            padding: 10px;
    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -43,6 +43,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.7px);
 -webkit-backdrop-filter: blur(1.7px);
 border: 1px solid rgba(61, 84, 218, 0.99);
+   width: 50%;
 
 
 
@@ -60,7 +61,17 @@ border: 1px solid rgba(61, 84, 218, 0.99);
     z-index: 1;
     
   }
-  
+
+
+  .btn:hover {
+
+background: rgba(61, 84, 218, 0.52);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.7px);
+-webkit-backdrop-filter: blur(1.7px);
+border: 1px solid rgba(61, 84, 218, 0.99);
+  }
   .input {
 background: rgba(242, 235, 235, 0.35);
 border-radius: 16px;
@@ -90,7 +101,7 @@ border: 1px solid rgba(242, 235, 235, 0.99);
   <input class="input" name="Email" type="email" placeholder="tapez votre Email" required>
   <input class="input" name="Name" type="text" placeholder="Votre Nom" required>
       <input class="input" name="Prenom" type="text" placeholder="votre Prenom" required>
-
+<br>
   <button class="btn" type="submit">Send</button>
 </form>
   
