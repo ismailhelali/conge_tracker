@@ -26,75 +26,53 @@ border: 1px solid rgba(222, 92, 92, 0.99);
 
    
     }
+
+
+
+
+/* Basic styling for labels */
+.labeltitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.labeldesc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Custom styling for inputs */
 .input {
-            margin: 10px; 
-            padding: 10px;
-   width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 20px;
-    z-index: -1;
-
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-  .btn {
-background: rgba(61, 84, 218, 0.23);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.7px);
--webkit-backdrop-filter: blur(1.7px);
-border: 1px solid rgba(61, 84, 218, 0.99);
-   width: 50%;
 
-
-
-    display: inline-block;
-    padding: 10px;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    
-  }
-
-
-  .btn:hover {
-
-background: rgba(61, 84, 218, 0.52);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.7px);
--webkit-backdrop-filter: blur(1.7px);
-border: 1px solid rgba(61, 84, 218, 0.99);
-  }
-  .input {
-/* From https://css.glass */
-background: rgba(28, 57, 230, 0.4);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(28, 57, 230, 0.99);
-  }
-
-    .input:hover {
-background: rgba(242, 235, 235, 0.79);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.7px);
--webkit-backdrop-filter: blur(1.7px);
-border: 1px solid rgba(242, 235, 235, 0.99);
-    }
-
-  .input .styled-input::placeholder {
-    color: black ; 
+/* Styling for submit button */
+.btn {
+  background-color: #FF8D03;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
+
+.btn:hover {
+  background-color: #FFA94C;
+}
+
+/* Align form elements */
+.valueform {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 </style>
  
 
@@ -125,7 +103,7 @@ border: 1px solid rgba(242, 235, 235, 0.99);
   <label class="labeldesc" for="project">Vous pouvez commencer par indiquer votre secteur d'activité et quel projet ou objectif vous avez en tête.</label>    
   <input class="input" id="project" name="Project" type="text" title="Dite nous la raison de vetre prise de contacte" placeholder="votre Projet" required>
 
-   label class="labeltitle" for="besoin">C'est quoi le problem ?</label><br>
+  <label class="labeltitle" for="besoin">C'est quoi le problem ?</label><br>
   <label class="labeldesc" for="besoin">Dite nous le problem que vous avez remarqué dans votre entreprise et nous serons heureux de vous accompagner dans le process de développement .</label>     
   <input class="input" id ="besoin" name="besoin" type="text" title="Exprimer votre problem ou votre besoin" placeholder="votre Besoin" required>
 
