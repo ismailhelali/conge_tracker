@@ -6,13 +6,30 @@
  body {
     background: linear-gradient(to bottom, #FF6B6B, #FF8D03);
 }
-  
+      .valueform {
+/* From https://css.glass */
+background: rgba(222, 92, 92, 0.74);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.7px);
+-webkit-backdrop-filter: blur(1.7px);
+border: 1px solid rgba(222, 92, 92, 0.99);
+
+        width: 80%;
+        margin: 5em auto;
+        padding: 2em;
+        
+        Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        z-index: 2;  
+            position: relative;
+
+    }
 </style>
  
 
 </head>
 <body>
-  <form 
+  <form class="valueform"
   method="POST" 
   action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec"
 >
