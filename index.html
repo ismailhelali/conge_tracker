@@ -74,12 +74,13 @@ backdrop-filter: blur(1.7px);
 border: 1px solid rgba(61, 84, 218, 0.99);
   }
   .input {
-background: rgba(242, 235, 235, 0.35);
+/* From https://css.glass */
+background: rgba(28, 57, 230, 0.4);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.7px);
--webkit-backdrop-filter: blur(1.7px);
-border: 1px solid rgba(242, 235, 235, 0.99);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(28, 57, 230, 0.99);
   }
 
     .input:hover {
@@ -101,19 +102,23 @@ border: 1px solid rgba(242, 235, 235, 0.99);
 <body>
 
 <div class="valueform">
-
-<h1>Nous somme a votre entiere disposition</h1>
+<p>Un simple clic pour révéler l'excellence.</p>
+<h1>CONTACT</h1>
+  
+  <h2>Notre Responsable </h2>
   
 </div>
   
   <form class="valueform"
   method="POST" 
-  action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec"
->
-  <input class="input" name="Email" type="email" placeholder="tapez votre Email" required>
-  <input class="input" name="Name" type="text" placeholder="Votre Nom" required>
-      <input class="input" name="Prenom" type="text" placeholder="votre Prenom" required>
-<br>
+  action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec">
+    
+  <input class="input" name="Email" type="email" title="Votre Adress Email" placeholder="tapez votre Email" required>
+  <input class="input" name="Name" type="text" title="Votre Honorable Nom et prenom" placeholder="Votre Nom" required>
+  <input class="input" name="Project" type="text" title="Dite nous la raison de vetre prise de contacte" placeholder="votre Projet" required>
+  <input class="input" name="besoin" type="text" title="Exprimer votre problem ou votre besoin" placeholder="votre Besoin" required>
+
+<br><br>
   <button class="btn" type="submit">Send</button>
 </form>
   
