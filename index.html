@@ -113,15 +113,21 @@ border: 1px solid rgba(242, 235, 235, 0.99);
   method="POST" 
   action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec">
     
-  <label class="labeltitle" for="email">Addresse Email</label>
-  <label class="labeldesc" for="email">Nous allons vous contacter avec cette address Email</label>
+  <label class="labeltitle" for="email">Addresse Email</label><br>
+  <label class="labeldesc" for="email">Nous allons vous contacter avec cette meme address Email</label>
   <input class="input" id="email" name="Email" type="email" title="Votre Adress Email" placeholder="tapez votre Email" required>
 
-   <label class="labeltitle" for="name">Votre Honorable Nom et prenom</label>
+  <label class="labeltitle" for="name">Votre Honorable Nom et prenom</label><br>
   <label class="labeldesc" for="name">Le nom et la renommée sont deux ombres qui se croisent mais ne s'accrochent jamais.</label>  
   <input class="input" id="name" name="Name" type="text" title="Votre Honorable Nom et prenom" placeholder="Votre Nom" required>
-  <input class="input" name="Project" type="text" title="Dite nous la raison de vetre prise de contacte" placeholder="votre Projet" required>
-  <input class="input" name="besoin" type="text" title="Exprimer votre problem ou votre besoin" placeholder="votre Besoin" required>
+
+  <label class="labeltitle" for="project">Dite nous la raison de vetre prise de contacte</label><br>
+  <label class="labeldesc" for="project">Vous pouvez commencer par indiquer votre secteur d'activité et quel projet ou objectif vous avez en tête.</label>    
+  <input class="input" id="project" name="Project" type="text" title="Dite nous la raison de vetre prise de contacte" placeholder="votre Projet" required>
+
+   label class="labeltitle" for="besoin">C'est quoi le problem ?</label><br>
+  <label class="labeldesc" for="besoin">Dite nous le problem que vous avez remarqué dans votre entreprise et nous serons heureux de vous accompagner dans le process de développement .</label>     
+  <input class="input" id ="besoin" name="besoin" type="text" title="Exprimer votre problem ou votre besoin" placeholder="votre Besoin" required>
 
 <br><br>
   <button class="btn" type="submit">Send</button>
