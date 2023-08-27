@@ -24,6 +24,33 @@ border: 1px solid rgba(222, 92, 92, 0.99);
             position: relative;
 
     }
+.input {
+
+  width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+  
+  
+  .input {
+background: rgba(242, 235, 235, 0.35);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.7px);
+-webkit-backdrop-filter: blur(1.7px);
+border: 1px solid rgba(242, 235, 235, 0.99);
+  }
+
+    .input:hover {
+background: rgba(242, 235, 235, 0.79);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.7px);
+-webkit-backdrop-filter: blur(1.7px);
+border: 1px solid rgba(242, 235, 235, 0.99);
+    }
 </style>
  
 
@@ -33,11 +60,11 @@ border: 1px solid rgba(222, 92, 92, 0.99);
   method="POST" 
   action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec"
 >
-  <input name="Email" type="email" placeholder="Email" required>
-  <input name="Name" type="text" placeholder="Name" required>
-      <input name="Prenom" type="text" placeholder="Prenom" required>
+  <input class="input" name="Email" type="email" placeholder="tapez votre Email" required>
+  <input class="input" name="Name" type="text" placeholder="Votre Nom" required>
+      <input class="input" name="Prenom" type="text" placeholder="votre Prenom" required>
 
-  <button type="submit">Send</button>
+  <button class="input" type="submit">Send</button>
 </form>
   
 
