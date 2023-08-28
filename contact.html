@@ -198,21 +198,16 @@ p {
 </form>
   
 <script>
-const projectInput = document.getElementById("project");
-const besoinInput = document.getElementById("besoin");
-
-projectInput.addEventListener("keydown", function(e) {
+projectInput.addEventListener("keyup", function(e) {
     if (e.key === "Tab" && !e.shiftKey) {
         e.preventDefault();
-        console.log("Tab pressed on projectInput");
         besoinInput.focus();
     }
 });
 
-besoinInput.addEventListener("keydown", function(e) {
+besoinInput.addEventListener("keyup", function(e) {
     if (e.key === "Tab" && e.shiftKey) {
         e.preventDefault();
-        console.log("Shift + Tab pressed on besoinInput");
         projectInput.focus();
     }
 });
