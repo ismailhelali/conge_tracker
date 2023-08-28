@@ -173,46 +173,70 @@ p {
   
 </div>
   <br><br>
-  <form class="valueform"
+<form class="valueform"
   method="POST" 
   action="https://script.google.com/macros/s/AKfycbw8FAaiUyHNFjMzZ3YhGlWsj2k-vsdfZkUGWRAaXxAtq1p_0-6CBc0ZZ0HD6n0V1nVj/exec">
-    
-  <label class="labeltitle" for="email">Addresse Email</label><br>
-  <label class="labeldesc" for="email">Nous allons vous contacter avec cette meme address Email</label>
-  <input class="input" id="email" name="Email" type="email" title="Votre Adress Email" placeholder="tapez votre Email" required>
-<br><br>
-  <label class="labeltitle" for="name">Votre Honorable Nom et prenom</label><br>
-  <label class="labeldesc" for="name">Le nom et la renommée sont deux ombres qui se croisent mais ne s'accrochent jamais.</label>  
-  <input class="input" id="name" name="Name" type="text" title="Votre Honorable Nom et prenom" placeholder="Votre Nom" required>
-<br><br>
-  <label class="labeltitle" for="project">Dite nous la raison de vetre prise de contacte</label><br>
-  <label class="labeldesc" for="project">Vous pouvez commencer par indiquer votre secteur d'activité et quel projet ou objectif vous avez en tête.</label>    
-  <input class="input" id="project" name="Project" type="text" title="Dite nous la raison de vetre prise de contacte" placeholder="votre Projet" required>
-<br><br>
-  <label class="labeltitle" for="besoin">C'est quoi le problem ?</label><br>
-  <label class="labeldesc" for="besoin">Dite nous le problem que vous avez remarqué dans votre entreprise et nous serons heureux de vous accompagner dans le process de développement .</label>     
-  <input class="input" id ="besoin" name="besoin" type="text" title="Exprimer votre problem ou votre besoin" placeholder="votre Besoin" required>
 
-<br><br>
+  <!-- Email Input -->
+  <label class="labeltitle" for="email">Addresse Email</label><br>
+  <label class="labeldesc" for="email">Nous allons vous contacter avec cette même adresse Email</label>
+  <div contenteditable="true" id="email" class="input" data-placeholder="tapez votre Email" required></div>
+  <br><br>
+  
+  <!-- Name Input -->
+  <label class="labeltitle" for="name">Votre Honorable Nom et prénom</label><br>
+  <label class="labeldesc" for="name">Le nom et la renommée sont deux ombres qui se croisent mais ne s'accrochent jamais.</label>
+  <div contenteditable="true" id="name" class="input" data-placeholder="Votre Nom" required></div>
+  <br><br>
+  
+  <!-- Project Input -->
+  <label class="labeltitle" for="project">Dites-nous la raison de votre prise de contact</label><br>
+  <label class="labeldesc" for="project">Vous pouvez commencer par indiquer votre secteur d'activité et quel projet ou objectif vous avez en tête.</label>
+  <div contenteditable="true" id="project" class="input" data-placeholder="votre Projet" required></div>
+  <br><br>
+  
+  <!-- Besoin Input -->
+  <label class="labeltitle" for="besoin">C'est quoi le problème ?</label><br>
+  <label class="labeldesc" for="besoin">Dites-nous le problème que vous avez remarqué dans votre entreprise et nous serons heureux de vous accompagner dans le processus de développement.</label>
+  <div contenteditable="true" id="besoin" class="input" data-placeholder="votre Besoin" required></div>
+  <br><br>
+  
   <button class="btn" type="submit">Envoyer Votre Demande</button>
 </form>
-  
 <script>
-projectInput.addEventListener("keyup", function(e) {
-    if (e.key === "Tab" && !e.shiftKey) {
+const inputs = document.querySelectorAll('.input');
+
+inputs.forEach(input => {
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            document.execCommand('insertHTML', false, '&#09;'); // Insert tab character
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            document.execCommand('insertHTML', false, '<br>'); // Insert newline
+        }
+    });
+
+    input.addEventListener('paste', function(e) {
         e.preventDefault();
-        besoinInput.focus();
-    }
+        const text = e.clipboardData.getData('text/plain');
+        document.execCommand('insertText', false, text);
+    });
+
+    input.addEventListener('focus', function() {
+        if (this.textContent === this.dataset.placeholder) {
+            this.textContent = '';
+        }
+    });
+
+    input.addEventListener('blur', function() {
+        if (this.textContent === '') {
+            this.textContent = this.dataset.placeholder;
+        }
+    });
 });
 
-besoinInput.addEventListener("keyup", function(e) {
-    if (e.key === "Tab" && e.shiftKey) {
-        e.preventDefault();
-        projectInput.focus();
-    }
-});
-
-
+  
 </script>
 </body>
 </html>
