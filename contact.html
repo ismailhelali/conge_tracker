@@ -204,6 +204,7 @@ const besoinInput = document.getElementById("besoin");
 projectInput.addEventListener("keydown", function(e) {
     if (e.key === "Tab" && !e.shiftKey) {
         e.preventDefault();
+        console.log("Tab pressed on projectInput");
         besoinInput.focus();
     }
 });
@@ -211,6 +212,7 @@ projectInput.addEventListener("keydown", function(e) {
 besoinInput.addEventListener("keydown", function(e) {
     if (e.key === "Tab" && e.shiftKey) {
         e.preventDefault();
+        console.log("Shift + Tab pressed on besoinInput");
         projectInput.focus();
     }
 });
