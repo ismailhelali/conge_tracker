@@ -200,3 +200,25 @@ p {
 
 </body>
 </html>
+
+
+<script>
+
+  const projectInput = document.getElementById("project");
+const besoinInput = document.getElementById("besoin");
+
+projectInput.addEventListener("keydown", function(e) {
+    if (e.key === "Tab" && !e.shiftKey) {
+        e.preventDefault();
+        besoinInput.focus();
+    }
+});
+
+besoinInput.addEventListener("keydown", function(e) {
+    if (e.key === "Tab" && e.shiftKey) {
+        e.preventDefault();
+        projectInput.focus();
+    }
+});
+
+</script>
